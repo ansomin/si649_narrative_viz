@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Big 5: A Comparative Look at Europe’s Premier Soccer Leagues</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <header>
+        <h1>The Big 5: A Comparative Look at Europe’s Premier Soccer Leagues</h1>
+        <p><strong>So Min An & Ashwin Kumar</strong></p>
+    </header>
+    <main>
+        <section>
+            <h2>Win Rates in European Competitions: Who Reigns Supreme?</h2>
+            <p>
+                The success of a league is often measured by its clubs’ performance in international tournaments such as the UEFA Champions League and the UEFA Europa League. The win rate of teams from each league provides insights into their dominance on the continental stage.
+            </p>
+            <div id="win-rate"></div>
+        </section>
+        <section>
+            <h2>Transfer Market Spendings: Breaking the Bank</h2>
+            <p>
+                The transfer market is where leagues flex their financial muscles. Comparing spending trends reveals the economic might and investment strategies of clubs from the Big 5.
+            </p>
+            <div id="globe"></div>
+        </section>
+        <section>
+            <h2>Stadium Viewership: The Fan’s Battle</h2>
+            <p>
+                Soccer is a global spectacle, and viewership metrics highlight the leagues’ reach and popularity.
+            </p>
+        </section>
+        <section>
+            <h2>Conclusion: A League of Their Own</h2>
+            <p>Each of the Big 5 leagues has its unique strengths:</p>
+        </section>
+    </main>
+    <script>
+        // Load Vega visualization (Win Rate)
+        (function(vegaEmbed) {
+            var spec = {
+                "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+                // Insert the JSON configuration from win_rate.html here
+                "vconcat": [{"data": {"name": "data-a06b1b31848ff0ce861980d97d4d8b41"}}, {}]
+            };
+            vegaEmbed("#win-rate", spec);
+        })(vegaEmbed);
+
+        // Load Plotly visualization (Globe)
+        Plotly.d3.json('globe.json', function(err, data) {
+            Plotly.newPlot('globe', data.data, data.layout);
+        });
+    </script>
+</body>
+</html>
