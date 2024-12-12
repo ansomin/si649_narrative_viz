@@ -43,3 +43,22 @@ section h2 {
   #vis.vega-embed details summary {
     position: relative;
   }
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.iframe {
+    transform: scale(0.2); /* Adjust the scale value as needed */
+    transform-origin: top left; /* Ensure proper scaling from the top-left corner */
+    width: 100%; /* Compensate for scaling by increasing the width */
+    height: 100%; /* Compensate for scaling by increasing the height */
+    border: none;
+}
+
+/* .tableauPlaceholder {
+    transform: scale(1.1);
+    width: 80%;
+    height: 100%;
+} */
